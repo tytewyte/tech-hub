@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.19.1"
   SECRETS_SCAN_ENABLED = "false"
 
 [functions]
