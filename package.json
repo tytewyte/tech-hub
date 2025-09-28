@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "parcel build public/js/app.js --dist-dir public --no-source-maps --no-cache && echo 'Build completed successfully'",
+    "build": "esbuild public/js/app.js --bundle --outfile=public/app.js && echo 'Build completed successfully'",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -41,7 +41,9 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "esbuild": "^0.25.10",
+    "nodemon": "^3.1.10",
+    "parcel": "^2.16.0"
   },
   "engines": {
     "node": ">=18.0.0"
