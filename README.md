@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c059242d-7df3-4b9b-95a5-d55465dcee1d/deploy-status)](https://app.netlify.com/projects/ai-tech-hub/deploys)
+
 # HVAC Troubleshooting Web App
 
 A web application for HVAC troubleshooting with an AI agent powered by OpenAI in production, with optional LM Studio for local development. This application prioritizes safety and provides users with accurate troubleshooting assistance.
