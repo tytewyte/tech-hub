@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC Troubleshooting Assistant - Expert AI-Powered HVAC Diagnostics</title>
+    <meta name="description" content="Get expert HVAC troubleshooting help with our AI-powered assistant. Diagnose heating, cooling, and airflow issues for central air, heat pumps, furnaces, and more. Safety-first guidance for homeowners and professionals.">
+    <meta name="keywords" content="HVAC troubleshooting, air conditioning repair, furnace diagnostics, heat pump issues, AI HVAC assistant, home heating cooling">
+    <meta name="author" content="HVAC Troubleshooting Assistant">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="HVAC Troubleshooting Assistant - Expert AI Diagnostics">
+    <meta property="og:description" content="AI-powered HVAC troubleshooting for heating, cooling, and airflow issues. Safety-first guidance.">
+    <meta property="og:image" content="https://yourdomain.com/images/hvac-app-preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HVAC Troubleshooting Assistant">
+    <meta name="twitter:description" content="AI-powered HVAC diagnostics for homes and businesses.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/hvac-app-preview.jpg">
+    
+    <!-- Structured Data (JSON-LD) for app/software -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "HVAC Troubleshooting Assistant",
+        "description": "AI-powered web application for diagnosing HVAC issues including heating, cooling, and airflow problems.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "HVAC Troubleshooting Assistant"
+        },
+        "featureList": [
+            "AI-powered diagnostics",
+            "Safety protocols",
+            "Reference library",
+            "Troubleshooting flows"
+        ],
+        "screenshot": "https://yourdomain.com/images/app-screenshot.jpg"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <img src="/images/hvac-logo.png" alt="HVAC Troubleshooting Assistant Logo" width="50" height="50">
+            <h1>HVAC Troubleshooting Assistant</h1>
+        </div>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#" class="active" data-page="home" aria-current="page">Home</a></li>
+                <li><a href="#" data-page="reference-library">Reference Library</a></li>
+                <li><a href="#" data-page="troubleshoot">Troubleshoot</a></li>
+                <li><a href="#" data-page="history">History</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu" role="complementary">
+            <button id="login-btn" class="btn" aria-label="Login to account">Login</button>
+            <button id="register-btn" class="btn btn-primary" aria-label="Register new account">Register</button>
+            <button id="subscribe-btn" class="btn btn-primary" aria-label="Subscribe to Pro">Subscribe</button>
+            <div id="paypal-buttons-container" class="hidden" aria-live="polite" style="margin-top:10px;"></div>
+            <div id="user-profile" class="hidden" aria-live="polite">
+                <span id="username" aria-label="Logged in user">User</span>
+                <button id="logout-btn" class="btn" aria-label="Logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Home Page -->
+        <section id="home-page" class="page active" aria-labelledby="home-heading">
+            <div class="hero">
+                <h2 id="home-heading">Expert HVAC Troubleshooting with AI Assistance</h2>
+                <p>Get help diagnosing and fixing your HVAC issues with our AI-powered assistant.</p>
+                <div class="safety-notice" role="note">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    <p><strong>Safety First:</strong> Our AI assistant provides guidance, but always prioritize safety. For complex issues involving electrical components, gas lines, or refrigerant, consult a certified HVAC professional.</p>
+                </div>
+                <button id="start-troubleshooting" class="btn btn-primary btn-large" aria-label="Start troubleshooting process">Start Troubleshooting</button>
+            </div>
+
+            <section class="features" aria-labelledby="features-heading">
+                <h3 id="features-heading" class="sr-only">Key Features</h3>
+                <article class="feature-card">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
+                    <h4>AI-Powered Assistant</h4>
+                    <p>Get intelligent troubleshooting help from our Gemma 3 4B AI assistant.</p>
+                </article>
+                <article class="feature-card">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <h4>Safety First</h4>
+                    <p>Clear safety warnings and professional recommendations when needed.</p>
+                </article>
+                <article class="feature-card">
+                    <i class="fas fa-history" aria-hidden="true"></i>
+                    <h4>History Tracking</h4>
+                    <p>Keep track of your troubleshooting sessions and solutions.</p>
+                </article>
+            </section>
+        </section>
+
+        <!-- Troubleshooting Page -->
+        <section id="troubleshoot-page" class="page" aria-labelledby="troubleshoot-heading">
+            <h2 id="troubleshoot-heading">HVAC Troubleshooting</h2>
+            
+            <div class="safety-notice prominent" role="alert">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                <div>
+                    <h3>Safety Warning</h3>
+                    <p>Always prioritize safety when troubleshooting HVAC systems:</p>
+                    <ul>
+                        <li>Turn off power before inspecting components</li>
+                        <li>Never handle refrigerant without proper certification</li>
+                        <li>Do not attempt to repair gas components</li>
+                        <li>If you smell gas, leave immediately and call your gas company</li>
+                        <li>When in doubt, contact a certified HVAC professional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <form class="troubleshoot-form" aria-labelledby="form-heading">
+                <h3 id="form-heading" class="sr-only">Troubleshooting Form</h3>
+                <div class="form-group">
+                    <label for="system-type">System Type:</label>
+                    <select id="system-type" aria-describedby="system-type-help">
+                        <option value="">Select System Type</option>
+                        <option value="central-ac">Central Air Conditioner</option>
+                        <option value="heat-pump">Heat Pump</option>
+                        <option value="furnace">Furnace</option>
+                        <option value="boiler">Boiler</option>
+                        <option value="mini-split">Ductless Mini-Split</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span id="system-type-help" class="sr-only">Choose the type of HVAC system you have</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue-description">Describe the Issue:</label>
+                    <textarea id="issue-description" placeholder="Describe your HVAC problem in detail..." aria-describedby="issue-help"></textarea>
+                    <span id="issue-help" class="sr-only">Provide detailed description of the problem</span>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Symptoms (select all that apply):</legend>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="symptom" value="no-power"> No Power</label>
+                        <label><input type="checkbox" name="symptom" value="no-heat"> No Heat</label>
+                        <label><input type="checkbox" name="symptom" value="no-cooling"> No Cooling</label>
+                        <label><input type="checkbox" name="symptom" value="poor-airflow"> Poor Airflow</label>
+                        <label><input type="checkbox" name="symptom" value="unusual-noise"> Unusual Noise</label>
+                        <label><input type="checkbox" name="symptom" value="water-leakage"> Water Leakage</label>
+                        <label><input type="checkbox" name="symptom" value="bad-smell"> Bad Smell</label>
+                        <label><input type="checkbox" name="symptom" value="system-cycling"> System Cycling On/Off</label>
+                    </div>
+                </fieldset>
+
+                <button id="submit-issue" class="btn btn-primary" type="submit" aria-label="Submit issue for AI diagnosis">Get Troubleshooting Help</button>
+            </form>
+
+            <div id="ai-response" class="hidden" aria-live="polite">
+                <h3>Troubleshooting Assistance</h3>
+                <div class="response-content">
+                    <!-- AI response will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- History Page -->
+        <section id="history-page" class="page" aria-labelledby="history-heading">
+            <h2 id="history-heading">Your Troubleshooting History</h2>
+            <div class="history-list" aria-live="polite">
+                <!-- History items will be loaded dynamically -->
+                <p class="no-history">Login to view your troubleshooting history.</p>
+            </div>
+        </section>
+
+        <!-- Reference Library Page -->
+        <section id="reference-library-page" class="page" aria-labelledby="library-heading">
+            <h2 id="library-heading">HVAC Reference Library</h2>
+            <p class="library-description">Access comprehensive HVAC manuals, technical guides, and maintenance resources.</p>
+            
+            <!-- Uploaded Manuals Section -->
+            <section class="uploaded-manuals-section" aria-labelledby="manuals-heading">
+                <h3 id="manuals-heading">Uploaded Manuals</h3>
+                <div class="manual-management-controls">
+                    <div class="search-controls">
+                        <input type="text" id="manual-search-desktop" placeholder="Search manuals..." aria-label="Search manuals on desktop">
+                        <input type="text" id="manual-search-mobile" placeholder="Search manuals..." aria-label="Search manuals on mobile">
+                        <select id="category-filter" aria-label="Filter manuals by category">
+                            <option value="">All Categories</option>
+                            <option value="equipment-manuals">Equipment Manuals</option>
+                            <option value="technical-guides">Technical Guides</option>
+                            <option value="maintenance">Maintenance Resources</option>
+                            <option value="safety">Safety Documents</option>
+                            <option value="codes-standards">Codes & Standards</option>
+                        </select>
+                    </div>
+                    <div class="view-controls">
+                        <button id="grid-view" class="btn btn-small active" aria-label="Grid View">
+                            <i class="fas fa-th" aria-hidden="true"></i>
+                        </button>
+                        <button id="list-view" class="btn btn-small" aria-label="List View">
+                            <i class="fas fa-list" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="manage-manuals-container" class="manuals-grid">
+                    <!-- Uploaded manuals will be displayed here -->
+                </div>
+                <div id="pagination-container" class="pagination-controls">
+                    <!-- Pagination controls will be rendered here -->
+                </div>
+                <div id="no-manuals" class="no-content">
+                    <i class="fas fa-folder-open" aria-hidden="true"></i>
+                    <p>No manuals uploaded yet</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('upload-modal').style.display = 'block'" aria-label="Upload your first manual">
+                        Upload Your First Manual
+                    </button>
+                </div>
+            </section>
+
+            <section class="reference-categories" aria-labelledby="categories-heading">
+                <h3 id="categories-heading" class="sr-only">Reference Categories</h3>
+                <div class="reference-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Equipment Manuals</h3>
+                    </div>
+                    <div class="category-content">
+                        <div class="reference-links">
+                            <a href="#" class="reference-link" data-type="manual" data-content="furnace-manual">
+                                <i class="fas fa-fire"></i>
+                                <span>Furnace Installation & Service Manual</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="manual" data-content="ac-manual">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air Conditioner Service Manual</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="manual" data-content="heatpump-manual">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Heat Pump Technical Manual</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="manual" data-content="boiler-manual">
+                                <i class="fas fa-burn"></i>
+                                <span>Boiler Operation Manual</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-category">
+                    <div class="category-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Technical Guides</h3>
+                    </div>
+                    <div class="category-content">
+                        <div class="reference-links">
+                            <a href="#" class="reference-link" data-type="guide" data-content="refrigeration-guide">
+                                <i class="fas fa-atom"></i>
+                                <span>Refrigeration Cycle & Troubleshooting</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="guide" data-content="electrical-guide">
+                                <i class="fas fa-bolt"></i>
+                                <span>Electrical Systems & Wiring</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="guide" data-content="airflow-guide">
+                                <i class="fas fa-wind"></i>
+                                <span>Airflow & Ductwork Design</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="guide" data-content="safety-guide">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Safety Procedures & Protocols</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-category">
+                    <div class="category-header">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Maintenance Resources</h3>
+                    </div>
+                    <div class="category-content">
+                        <div class="reference-links">
+                            <a href="#" class="reference-link" data-type="maintenance" data-content="preventive-maintenance">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Preventive Maintenance Schedules</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="maintenance" data-content="filter-guide">
+                                <i class="fas fa-filter"></i>
+                                <span>Filter Selection & Replacement</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="maintenance" data-content="seasonal-prep">
+                                <i class="fas fa-leaf"></i>
+                                <span>Seasonal Preparation Checklists</span>
+                            </a>
+                            <a href="#" class="reference-link" data-type="maintenance" data-content="troubleshooting-charts">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Quick Troubleshooting Charts</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reference-actions" aria-labelledby="actions-heading">
+                <h3 id="actions-heading" class="sr-only">Reference Actions</h3>
+                <button id="upload-reference" class="btn" aria-label="Upload document">
+                    <i class="fas fa-upload" aria-hidden="true"></i>
+                    Upload Document
+                </button>
+                <button id="download-all" class="btn" aria-label="Download all documents">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    Download All
+                </button>
+                <button id="print-library" class="btn" aria-label="Print library">
+                    <i class="fas fa-print" aria-hidden="true"></i>
+                    Print Library
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <!-- Auth Modals -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="register-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-username">Username:</label>
+            <input type="text" id="register-username" required>
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" autocomplete="new-password" required>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Confirm Password:</label>
+            <input type="password" id="register-confirm-password" autocomplete="new-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Provide Feedback</h2>
+        <form id="feedback-form">
+          <div class="form-group">
+            <label for="feedback-name">Name (optional):</label>
+            <input type="text" id="feedback-name">
+          </div>
+          <div class="form-group">
+            <label for="feedback-email">Email (optional):</label>
+            <input type="email" id="feedback-email">
+          </div>
+          <div class="form-group">
+            <label for="feedback-type">Feedback Type:</label>
+            <select id="feedback-type" required>
+              <option value="">Select Type</option>
+              <option value="bug">Bug Report</option>
+              <option value="feature">Feature Request</option>
+              <option value="improvement">Improvement Suggestion</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="feedback-message">Your Feedback:</label>
+            <textarea id="feedback-message" required placeholder="Please share your thoughts, suggestions, or report issues..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+        <div id="feedback-success" class="hidden">
+          <i class="fas fa-check-circle"></i>
+          <p>Thank you for your feedback! We appreciate your input.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reference Viewer Modal -->
+    <!-- Reference Modal -->
+    <div id="reference-modal" class="modal hidden">
+      <div class="modal-content reference-modal-content">
+        <div class="modal-header">
+          <h3 id="reference-title">Reference Document</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="reference-content">
+            <!-- Reference content will be loaded here -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="download-reference" class="btn">
+            <i class="fas fa-download"></i>
+            Download
+          </button>
+          <button id="print-reference" class="btn">
+            <i class="fas fa-print"></i>
+            Print
+          </button>
+          <button id="close-reference" class="btn btn-secondary">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload Manual Modal -->
+    <div id="upload-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Upload Manual</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="upload-form" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="manual-title">Manual Title:</label>
+              <input type="text" id="manual-title" name="title" required placeholder="e.g., Carrier Furnace Service Manual">
+            </div>
+            
+            <div class="form-group">
+              <label for="manual-category">Category:</label>
+              <select id="manual-category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="equipment-manuals">Equipment Manuals</option>
+                <option value="technical-guides">Technical Guides</option>
+                <option value="maintenance">Maintenance Resources</option>
+                <option value="safety">Safety Documents</option>
+                <option value="codes-standards">Codes & Standards</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="manual-subcategory">Subcategory:</label>
+              <input type="text" id="manual-subcategory" name="subcategory" placeholder="e.g., Furnaces, Heat Pumps, etc.">
+            </div>
+            
+            <div class="form-group">
+              <label for="manual-description">Description:</label>
+              <textarea id="manual-description" name="description" rows="3" placeholder="Brief description of the manual content"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="manual-file">Select File:</label>
+              <div class="file-upload-area">
+                <input type="file" id="manual-file" name="file" accept=".pdf,.doc,.docx,.txt" required>
+                <div class="file-upload-info">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Click to select file or drag and drop</p>
+                  <p class="file-types">Supported: PDF, DOC, DOCX, TXT (Max 10MB)</p>
+                </div>
+                <div id="file-preview" class="file-preview hidden">
+                  <i class="fas fa-file"></i>
+                  <span id="file-name"></span>
+                  <span id="file-size"></span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="manual-public" name="public">
+                Make this manual publicly accessible
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="upload-submit" class="btn btn-primary">
+            Upload
+          </button>
+          <button id="upload-cancel" class="btn btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Detail Modal -->
+    <div id="history-detail-modal" class="modal hidden">
+      <div class="modal-content large-modal">
+        <div class="modal-header">
+          <h3>Troubleshooting Session Details</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body" id="history-detail-content">
+          <!-- Dynamic content will be injected here -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manual Management Modal -->
+    <div id="manage-manuals-modal" class="modal hidden">
+      <div class="modal-content large-modal">
+        <div class="modal-header">
+          <h3>Manage Manuals</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="manual-management-controls">
+            <div class="search-controls">
+              <input type="text" id="manual-search-modal" placeholder="Search manuals..." aria-label="Search manuals in modal">
+              <select id="manage-category-filter" aria-label="Filter manuals by category in modal">
+                <option value="">All Categories</option>
+                <option value="equipment-manuals">Equipment Manuals</option>
+                <option value="technical-guides">Technical Guides</option>
+                <option value="maintenance">Maintenance Resources</option>
+                <option value="safety">Safety Documents</option>
+                <option value="codes-standards">Codes & Standards</option>
+              </select>
+            </div>
+            <div class="view-controls">
+              <button id="manage-grid-view" class="btn btn-small active" aria-label="Grid View in modal">
+                <i class="fas fa-th"></i>
+              </button>
+              <button id="manage-list-view" class="btn btn-small" aria-label="List View in modal">
+                <i class="fas fa-list"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div id="manuals-container" class="manuals-grid">
+            <!-- Uploaded manuals will be displayed here -->
+          </div>
+
+          <div id="modal-pagination-container" class="pagination-controls">
+            <!-- Pagination controls for modal will be rendered here -->
+          </div>
+          
+          <div id="manage-no-manuals" class="no-content hidden">
+            <i class="fas fa-folder-open"></i>
+            <p>No manuals uploaded yet</p>
+            <button class="btn btn-primary" onclick="document.getElementById('upload-modal').style.display = 'block'">
+              Upload Your First Manual
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="close-manuals-btn" class="btn btn-secondary">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 HVAC Troubleshooting Assistant. All rights reserved.</p>
+        <p class="disclaimer">This application provides guidance only. Always consult with a certified HVAC professional for serious issues.</p>
+        <button id="feedback-btn" class="btn">Provide Feedback</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="hvac-knowledge-base.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/modules/payments.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  SECRETS_SCAN_ENABLED = "false"
+
+[functions]
+  directory = "functions"
+
+# Handle client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API and Auth to Netlify Functions
+[[redirects]]
+  from = "/auth/login"
+  to = "/.netlify/functions/auth-login"
+  status = 200
+[[redirects]]
+  from = "/auth/register"
+  to = "/.netlify/functions/auth-register"
+  status = 200
+[[redirects]]
+  from = "/auth/me"
+  to = "/.netlify/functions/auth-me"
+  status = 200
+
+[[redirects]]
+  from = "/api/troubleshoot"
+  to = "/.netlify/functions/troubleshoot"
+  status = 200
+[[redirects]]
+  from = "/api/manuals"
+  to = "/.netlify/functions/api-manuals"
+  status = 200
+[[redirects]]
+  from = "/api/manuals/*"
+  to = "/.netlify/functions/api-manuals/:splat"
+  status = 200
+[[redirects]]
+  from = "/api/upload-manual"
+  to = "/.netlify/functions/api-upload-manual"
+  status = 200
+[[redirects]]
+  from = "/api/troubleshooting-flows"
+  to = "/.netlify/functions/api-troubleshooting-flows"
+  status = 200
+
+# PayPal Subscriptions
+[[redirects]]
+  from = "/api/paypal/config"
+  to = "/.netlify/functions/paypal-client-config"
+  status = 200
+[[redirects]]
+  from = "/api/paypal/webhook"
+  to = "/.netlify/functions/paypal-webhook"
+  status = 200
+[[redirects]]
+  from = "/api/paypal/link-subscription"
+  to = "/.netlify/functions/paypal-link-subscription"
+  status = 200
