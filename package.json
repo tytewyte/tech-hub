@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo \"Build completed successfully\"",
+    "build": "parcel build public/js/app.js --dist-dir public --no-source-maps --no-cache && echo 'Build completed successfully'",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
